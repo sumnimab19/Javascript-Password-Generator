@@ -18,25 +18,29 @@ function generatePassword(){
   var specialChar = ["!#$%&'()*+-./:;<=>?@"];
   var randomString="";
 
-  var inputLength = prompt("Enter length of password between 8 - 128 characters.");
-  var isInputLower = confirm("Do you want to include Lower Case characters?");
-  var isInputUpper = confirm("Do you want to include Upper Case characters?");
-  var isInputNumber = confirm("Do you want to include Number?");
-  var isInputSpecialChar = confirm("Do you want to include Special Characters?")
-
-  
-  if ((isInputLower) && (isInputUpper) && (isInputNumber) && (isInputSpecialChar)) {
-    var newString = lowerChar + upperChar + numChar + specialChar; 
-    console.log(newString);
+  var inputLength = prompt("Enter length of password between 8 - 128.");
+ 
+  if((inputLength < 8) || (inputLength > 128)){
+    alert("Please enter number between 8 and 128 to generate a valid password.");
   } 
+  else {
+    var isInputLower = confirm("Do you want to include Lower Case characters?");
+    var isInputUpper = confirm("Do you want to include Upper Case characters?");
+    var isInputNumber = confirm("Do you want to include Number?");
+    var isInputSpecialChar = confirm("Do you want to include Special Characters?")
 
-  for (var i = 0; i < inputLength; i++) {
-    var newPassword = newString[Math.floor(Math.random() * newString.length)];
-    randomString+= newPassword;
-  }
+    
+    if ((isInputLower) && (isInputUpper) && (isInputNumber) && (isInputSpecialChar)) {
+      var newString = lowerChar + upperChar + numChar + specialChar; 
+    } 
 
-  return (randomString);
+    for (var i = 0; i < inputLength; i++) {
+      var newPassword = newString[Math.floor(Math.random() * newString.length)];
+      randomString+= newPassword;
+    }
 
+    return (randomString);
+    }
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -59,3 +63,16 @@ generateBtn.addEventListener("click", writePassword);
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
 
+/*
+ if ((isInputLower) && (isInputUpper) && (isInputNumber) && (isInputSpecialChar)) {
+    var newString = lowerChar + upperChar + numChar + specialChar; 
+    console.log(newString);
+  } 
+
+  for (var i = 0; i < inputLength; i++) {
+    var newPassword = newString[Math.floor(Math.random() * newString.length)];
+    randomString+= newPassword;
+  }
+
+  return (randomString);
+*/
