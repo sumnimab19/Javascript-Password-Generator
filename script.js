@@ -20,6 +20,7 @@ function generatePassword() {
   var upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
   var numChar = [1,2,3,4,5,6,7,8,9,0];
+
   var specialChar = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"];
   
   var newPassword="";
@@ -47,55 +48,40 @@ function generatePassword() {
       // When all inputs are selected as 'OK'
       if ((isInputLower) && (isInputUpper) && (isInputNumber) && (isInputSpecialChar)) {
         var newString = lowerChar.join("") + numChar.join("") + upperChar.join("") + specialChar.join("");
-        console.log(newString);
-
+        
         // When 3 out of 4 inputs are selected as 'OK'
       } else if ((isInputLower) && (isInputUpper) && (isInputNumber)) {
-          var newString = lowerChar.join("") + upperChar.join("") + numChar.join("");
-          console.log(newString);
+          newString = lowerChar.join("") + upperChar.join("") + numChar.join("");
       } else if ((isInputLower) && (isInputUpper) && (isInputSpecialChar)) {
-        var newString = lowerChar.join("") + upperChar.join("") + specialChar.join("");
-        console.log(newString);
+          newString = lowerChar.join("") + upperChar.join("") + specialChar.join("");
       } else if ((isInputLower) && (isInputNumber) && (isInputSpecialChar)) {
-        var newString = lowerChar.join("") + numChar.join("") + specialChar.join("");
-        console.log(newString);
+          newString = lowerChar.join("") + numChar.join("") + specialChar.join("");
       } else if ((isInputUpper) && (isInputNumber) && (isInputSpecialChar)) {
-        var newString = upperChar.join("") + numChar.join("") + specialChar.join("");
-        console.log(newString);
+          newString = upperChar.join("") + numChar.join("") + specialChar.join("");
 
         // When 2 out of 4 inputs are selected as 'OK'
       } else if ((isInputLower) && (isInputUpper)) {
-        var newString = lowerChar.join("") + upperChar.join("");
-        console.log(newString);
+          newString = lowerChar.join("") + upperChar.join("");
       } else if ((isInputLower) && (isInputNumber)) {
-        var newString = lowerChar.join("") + numChar.join("");
-        console.log(newString);
+          newString = lowerChar.join("") + numChar.join("");
       } else if ((isInputLower) && (isInputSpecialChar)) {
-        var newString = lowerChar.join("") + specialChar.join("");
-        console.log(newString);
+          newString = lowerChar.join("") + specialChar.join("");
       } else if ((isInputUpper) && (isInputNumber)) {
-        var newString = upperChar.join("") + numChar.join("");
-        console.log(newString);
+          newString = upperChar.join("") + numChar.join("");
       } else if ((isInputUpper) && (isInputSpecialChar)) {
-        var newString = upperChar.join("") + specialChar.join("");
-        console.log(newString);
+          newString = upperChar.join("") + specialChar.join("");
       } else if ((isInputNumber) && (isInputSpecialChar)) {
-        var newString = numChar.join("") + specialChar.join("");
-        console.log(newString);
+          newString = numChar.join("") + specialChar.join("");
 
         // When 1 out of 4 input is selected as 'OK'
       } else if (isInputLower) {
-        var newString = lowerChar.join("");
-        console.log(newString);
+          newString = lowerChar.join("");
       } else if (isInputUpper) {
-        var newString = upperChar.join("");
-        console.log(newString);
+          newString = upperChar.join("");
       } else if (isInputNumber) {
-        var newString = numChar.join("");
-        console.log(newString);
+          newString = numChar.join("");
       } else if (isInputSpecialChar) {
-        var newString = specialChar.join("");
-        console.log(newString);
+          newString = specialChar.join("");
       } 
 
       // Loop to generate password based on length input.
