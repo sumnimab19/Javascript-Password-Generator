@@ -36,7 +36,7 @@ Once at least one character type is selected, password is generated that matches
 ## GIF
 
 ### Invalid Inputs:
-
+![Apr-16-2020 18-04-05](https://user-images.githubusercontent.com/55207625/79520994-efd68e00-800c-11ea-8de7-8d9882ab5cd0.gif)
 
 
 
