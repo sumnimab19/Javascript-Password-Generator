@@ -30,3 +30,15 @@ Once at least one character type is selected, password is generated that matches
 
 
 ## Screenshot
+
+![Image 4-16-20 at 5 53 PM](https://user-images.githubusercontent.com/55207625/79520316-52c72580-800b-11ea-9a68-53dc45b722f8.jpeg)
+
+## GIF
+
+### Invalid Inputs:
+
+
+
+
+### Valid Input Password Generation:
+
