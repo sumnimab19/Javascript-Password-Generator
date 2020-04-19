@@ -2,6 +2,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -17,10 +19,12 @@ function generatePassword() {
   var lowerChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
   var upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   var numChar = [1,2,3,4,5,6,7,8,9,0];
-  var specialChar = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"];
+  var specialChar = ["^","{","`","_","]","!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","|","}","~"];
   
   var newPassword = "";
-  var newString;
+  var newString = "";
+  var criteriaArray = [];
+  
 
   // User prompted for the length of the password.
   var inputLength = prompt("Enter length of password needed between 8 - 128.");
@@ -32,9 +36,33 @@ function generatePassword() {
   else {
     // User presented with a series of confirms for password criteria - lowercase, uppercase, numeric, and special characters
     var isInputLower = confirm("Do you want to include Lower Case characters?");
+    if(isInputLower){
+      var lowerArray = lowerChar[Math.floor(Math.random() * lowerChar.length)];
+      criteriaArray.push(lowerArray);
+      console.log(criteriaArray)
+    }
+
     var isInputUpper = confirm("Do you want to include Upper Case characters?");
+    if(isInputUpper){
+      var upperArray = upperChar[Math.floor(Math.random() * upperChar.length)];
+      criteriaArray.push(upperArray);
+      console.log(criteriaArray)
+    }
+
     var isInputNumber = confirm("Do you want to include Number?");
-    var isInputSpecialChar = confirm("Do you want to include Special Characters?")
+    if(isInputNumber){
+      var numArray = numChar[Math.floor(Math.random() * numChar.length)];
+      criteriaArray.push(numArray);
+      console.log(criteriaArray)
+    }
+
+    var isInputSpecialChar = confirm("Do you want to include Special Characters?");
+    if(isInputSpecialChar){
+      var specialArray = specialChar[Math.floor(Math.random() * specialChar.length)];
+      criteriaArray.push(specialArray);
+      console.log(criteriaArray)
+    }
+    
 
     // Input validation - at least one character type should be selected.
     if ((!isInputLower) && (!isInputUpper) && (!isInputNumber) && (!isInputSpecialChar)) {
@@ -42,11 +70,9 @@ function generatePassword() {
     } else{
 
       // Conditional statements to generate password that matches the selected criteria.
-
       // --- When all 4 inputs are selected ---
       if ((isInputLower) && (isInputUpper) && (isInputNumber) && (isInputSpecialChar)) {
         newString = lowerChar.join("") + numChar.join("") + upperChar.join("") + specialChar.join("");
-        
         
         // --- When 3 out of 4 inputs are selected ---
       } else if ((isInputLower) && (isInputUpper) && (isInputNumber)) {
@@ -87,13 +113,19 @@ function generatePassword() {
       for (var i = 0; i < inputLength; i++) {
         var randomString = newString[Math.floor(Math.random() * newString.length)];
         newPassword+= randomString;
+        var newerPassword = newPassword.split("");
       }
+    
 
-      return (newPassword);
+      // Adding at least one element from selected character type(s)
+      for(var i = 0; i < criteriaArray.length; i++){
+        newerPassword[i] = criteriaArray[i]
       }
+      var finalPassword = newerPassword.join("");
+      return (finalPassword);
+    }
   }
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
