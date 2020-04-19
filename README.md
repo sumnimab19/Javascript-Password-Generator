@@ -6,17 +6,17 @@ This application generates a random password based on user-selected criteria. Th
 ## Description
 
 User is presented with the Password Generator card with a ‘Generate Password’ red button. When the user clicks on the button, they are prompted for the length of the password. This application validates the user input for these conditions:
-	1. Number between 8 - 128
-	2. Float numbers
-	3. Any non numeric inputs
-	4. Null input 
 
+   1. Number between 8 - 128
+   2. Float numbers
+   3. Any non numeric inputs
+   4. Null input
 
 Then users are prompted with these character type inputs:
-	1. Lower Case
-	2. Upper Case
-	3. Number
-	4. Special Character
+    1. Lower Case
+    2. Upper Case
+    3. Number
+    4. Special Character
 
 It then validates that the user must select at least one character type to proceed. 
 
@@ -30,3 +30,16 @@ Once at least one character type is selected, password is generated that matches
 
 
 ## Screenshot
+
+![Image 4-16-20 at 5 53 PM](https://user-images.githubusercontent.com/55207625/79520316-52c72580-800b-11ea-9a68-53dc45b722f8.jpeg)
+
+## GIF
+
+### Invalid Inputs:
+![Apr-16-2020 18-04-05](https://user-images.githubusercontent.com/55207625/79520994-efd68e00-800c-11ea-8de7-8d9882ab5cd0.gif)
+
+
+
+### Valid Input Password Generation:
+![test](https://user-images.githubusercontent.com/55207625/79523798-ca994e00-8013-11ea-9e36-b72d9f269cba.gif)
+
