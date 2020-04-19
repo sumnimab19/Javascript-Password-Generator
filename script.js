@@ -35,32 +35,29 @@ function generatePassword() {
   }
   else {
     // User presented with a series of confirms for password criteria - lowercase, uppercase, numeric, and special characters
+    // criteriaArray variable will pick a random element from each char type array if user selects them.
     var isInputLower = confirm("Do you want to include Lower Case characters?");
     if(isInputLower){
       var lowerArray = lowerChar[Math.floor(Math.random() * lowerChar.length)];
       criteriaArray.push(lowerArray);
-      console.log(criteriaArray)
     }
 
     var isInputUpper = confirm("Do you want to include Upper Case characters?");
     if(isInputUpper){
       var upperArray = upperChar[Math.floor(Math.random() * upperChar.length)];
       criteriaArray.push(upperArray);
-      console.log(criteriaArray)
     }
 
     var isInputNumber = confirm("Do you want to include Number?");
     if(isInputNumber){
       var numArray = numChar[Math.floor(Math.random() * numChar.length)];
       criteriaArray.push(numArray);
-      console.log(criteriaArray)
     }
 
     var isInputSpecialChar = confirm("Do you want to include Special Characters?");
     if(isInputSpecialChar){
       var specialArray = specialChar[Math.floor(Math.random() * specialChar.length)];
       criteriaArray.push(specialArray);
-      console.log(criteriaArray)
     }
     
 
@@ -113,11 +110,12 @@ function generatePassword() {
       for (var i = 0; i < inputLength; i++) {
         var randomString = newString[Math.floor(Math.random() * newString.length)];
         newPassword+= randomString;
+        // Converted string to an Array
         var newerPassword = newPassword.split("");
       }
     
 
-      // Adding at least one element from selected character type(s)
+      // Adding at least one element from selected character type(s) based on user selection.
       for(var i = 0; i < criteriaArray.length; i++){
         newerPassword[i] = criteriaArray[i]
       }
