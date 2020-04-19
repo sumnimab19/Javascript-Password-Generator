@@ -5,22 +5,22 @@ This application generates a random password based on user-selected criteria. Th
 
 ## Description
 
-User is presented with the Password Generator card with a ‘Generate Password’ red button. When the user clicks on the button, they are prompted for the length of the password. This application validates the user input for these conditions:
+User is presented with the Password Generator card on the browser with a ‘Generate Password’ red button. When the user clicks on the button, they are prompted for the length of the password. This application validates the user input for these conditions before proceeding:
 
-   1. Number between 8 - 128
-   2. Float numbers
+   1. Number not between 8 - 128
+   2. Decimal numbers
    3. Any non numeric inputs
    4. Null input
 
 Then users are prompted with these character type inputs:
-    1. Lower Case
-    2. Upper Case
-    3. Number
-    4. Special Character
+   1. Lower Case
+   2. Upper Case
+   3. Number
+   4. Special Character
 
-It then validates that the user must select at least one character type to proceed. 
+It then validates if the user has selected at least one character type to proceed. 
 
-Once at least one character type is selected, password is generated that matches the selected criteria and a random password is displayed on the page.
+Once at least one character type is selected, password of specified length is generated that matches the selected criteria and a random password is displayed on the page.
 
 
 ## Technology Used
