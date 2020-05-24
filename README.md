@@ -43,3 +43,5 @@ Once at least one character type is selected, password of specified length is ge
 ### Valid Input Password Generation:
 ![test](https://user-images.githubusercontent.com/55207625/79523798-ca994e00-8013-11ea-9e36-b72d9f269cba.gif)
 
+### Link to the Deployed App:
+https://sumnimab19.github.io/Javascript-Password-Generator/
